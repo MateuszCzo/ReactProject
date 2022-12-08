@@ -1,0 +1,44 @@
+.Film {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: white;
+    margin: 10px;
+    min-width: 650px;
+    width: 50%;
+}
+
+.FilmImage {
+    height: 256px;
+}
+
+.FilmInfo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+.Score {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.ScoreImage {
+    height: 32px;
+    margin: 1px;
+    margin-bottom: 10px;
+}
+
+.ScoreNumber {
+    font-size: 30px;
+    font-weight: 500;
+    margin: 1px;
+    margin-bottom: 10px;
+}
+
+.FilmName {
+    font-size: 40px;
+    margin: 1px;
+    font-weight: 500;
+}
