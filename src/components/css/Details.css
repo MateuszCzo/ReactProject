@@ -1,4 +1,4 @@
-.Home .Film {
+.Details .Film {
     display: flex;
     align-items: center;
     padding: 15px;
@@ -8,36 +8,36 @@
     width: 50%;
 }
 
-.Home .FilmImage {
+.Details .FilmImage {
     height: 256px;
 }
 
-.Home .FilmInfo {
+.Details .FilmInfo {
     display: flex;
     flex-direction: column;
     margin-left: 50px;
 }
 
-.Home .Score {
+.Details .Score {
     display: flex;
     align-items: center;
     margin-bottom: 30px;
 }
 
-.Home .ScoreImage {
+.Details .ScoreImage {
     height: 32px;
     margin: 1px;
     margin-bottom: 10px;
 }
 
-.Home .ScoreNumber {
+.Details .ScoreNumber {
     font-size: 30px;
     font-weight: 500;
     margin: 1px;
     margin-bottom: 10px;
 }
 
-.Home .FilmName {
+.Details .FilmName {
     font-size: 40px;
     margin: 1px;
     font-weight: 500;

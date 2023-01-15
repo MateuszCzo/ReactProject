@@ -5,7 +5,7 @@ import './css/Home.css';
 
 function Home () {
     return (
-        <div>
+        <div className="Home">
             <Link to="/details" className="nav-link" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
                 <div className='Film'>
                     <div>

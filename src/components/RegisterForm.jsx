@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import './css/RegisterForm.css';
 
 function RegisterFrom({Login, error}) {
     const [details, setDetails] = useState({type:"signup", login:"", name:"", email:"", password:""});
@@ -12,9 +13,9 @@ function RegisterFrom({Login, error}) {
     }
 
     return(
-        <div className="MainDiv">
+        <div className="RegisterForm">
             {(ifSubmited && error === "") ? (
-                <div className="Welcome">
+                <div className="Info">
                     <p>Welcome {details.name}</p>
                 </div>
             ) : (
@@ -39,7 +40,7 @@ function RegisterFrom({Login, error}) {
                         <input type="password" name="password" id="password" onChange={e=>setDetails({...details, password: e.target.value})} value={details.password}/>
                     </div>
                     <input type="submit" value="LOGIN"/>
-                    <Link to="/signin" className="nav-link" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">signup</Link>
+                    <Link to="/signin" className="LoginLink">signin</Link>
                 </div>
             </form>
             )}

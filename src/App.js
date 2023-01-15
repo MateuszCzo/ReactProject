@@ -1,12 +1,12 @@
 import './App.css';
 import React, { useState } from "react";
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import LoginForm from "./components/LoginForm";
 import RegisterForm from './components/RegisterForm';
 import AddVideo from './components/AddVideo';
 import Details from './components/Details';
-import logo from "./components/images/logo.jpg";
+import Header from './components/Header';
 
 function App() {
   const [user, setUser] = useState("");
@@ -38,27 +38,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className='Container'>
-        <div className='Header'>
-          <div className='IconAndSearchBar'>
-            <Link to="/" className="nav-link" id="pills-home-tab" data-toggle="pill" href="#pills-home"
-              role="tab" aria-controls="pills-home" aria-selected="true"><img className='LogoImage' src={logo} alt="Home"/></Link>
-            <input className='SearchBar' type="text" name="film" id="film" placeholder='Szukaj Filmów'/>
-          </div>
-          <div className='Login'>
-            {(user !== "") ? (
-              <div className='LoginDiv'>
-                <Link to="/add" className="nav-link" id="pills-home-tab" data-toggle="pill" href="#pills-home"
-                role="tab" aria-controls="pills-home" aria-selected="true">add film</Link>
-                <span>{user}</span>
-                <button onClick={Logout}>Logout</button>
-              </div>
-            ) : (
-              <div className='LoginDiv'>
-                <Link to="/signin" className="nav-link LoginLink" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">LOGIN</Link>
-              </div>
-            )}
-          </div>
-        </div>
+        <Header user={user} logout={Logout}/>
         <div>
           <Routes>
             <Route path="/" element={<Home/>} exact/>

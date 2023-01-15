@@ -1,30 +1,30 @@
-.LoginForm * {
+.AddVideo * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: monospace, sans-serif;
 }
 
-.LoginForm input, button {
+.AddVideo input, button {
     appearance: none;
     background: none;
     border: none;
     outline: none;
 }
 
-.LoginForm {
+.AddVideo {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 90vh;
 }
 
-.LoginForm form {
+.AddVideo form {
     display: block;
     position: relative;
 }
 
-.LoginForm form:after {
+.AddVideo form:after {
     content: '';
     display: block;
     position: absolute;
@@ -36,7 +36,7 @@
     background-image: linear-gradient(to bottom right, #ffa500, #8000FF);
 }
 
-.LoginForm form .form-inner {
+.AddVideo form .form-inner {
     position: relative;
     display: block;
     background-color: #fff;
@@ -46,20 +46,20 @@
 }
 
 
-.LoginForm .form-inner h2 {
+.AddVideo .form-inner h2 {
     color: #888;
     font-size: 30px;
     font-weight: 500;
     margin-bottom: 30px;
 }
 
-.LoginForm .form-group {
+.AddVideo .form-group {
     display: block;
     width:300px;
     margin-bottom: 15px;
 }
 
-.LoginForm .form-group label {
+.AddVideo .form-group label {
     display: block;
     color: #666;
     font-size: 12px;
@@ -67,11 +67,11 @@
     transform: 0.4s;
 }
 
-.LoginForm .form-group:focus-within label {
+.AddVideo .form-group:focus-within label {
     color: #fe4880;
 }
 
-.LoginForm .form-group input {
+.AddVideo .form-group input {
     display: block;
     width: 100%;
     padding: 10px 15px;
@@ -80,11 +80,11 @@
     transform: 0.4s;
 }
 
-.LoginForm .form-group input:focus {
+.AddVideo .form-group input:focus {
     box-shadow: 0px 0px 3px rgba(0,0,0,0.2);
 }
 
-.LoginForm .form-inner input[type="submit"] {
+.AddVideo .form-inner input[type="submit"] {
     display: inline-block;
     padding: 10px 15px;
     border-radius: 8px;
@@ -97,10 +97,10 @@
     cursor: pointer;
 }
 
-.LoginForm .form-inner input[type="submit"]:hover {
+.AddVideo .form-inner input[type="submit"]:hover {
     background-position: 100% 0%;
 }
 
-.LoginForm .Info {
+.AddVideo .Info {
     font-size: 100px;
 }

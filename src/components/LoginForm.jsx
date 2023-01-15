@@ -13,9 +13,9 @@ function LoginForm({Login, error}) {
     }
 
     return(
-        <div className="MainDiv">
+        <div className="LoginForm">
             {(ifSubmited && error === "") ? (
-                <div className="Welcome">
+                <div className="Info">
                     <p>Welcome Back {details.name}</p>
                 </div>
             ) : (
@@ -32,7 +32,7 @@ function LoginForm({Login, error}) {
                         <input type="password" name="password" id="password" onChange={e=>setDetails({...details, password: e.target.value})} value={details.password}/>
                     </div>
                     <input type="submit" value="LOGIN"/>
-                    <Link to="/signup" className="nav-link LoginLink" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">signup</Link>
+                    <Link to="/signup" className="LoginLink">signup</Link>
                 </div>
             </form>
             )}

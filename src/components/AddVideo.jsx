@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './css/AddVideo.css'
 
 function AddVideo() {
     const [details, setDetails] = useState({nazwa:"", opis:"", gatunek:"", link:"", reżyser:"", rok_produkcji:""});
@@ -7,13 +8,13 @@ function AddVideo() {
     const submitHandler = e => {
         e.preventDefault();
         setIfSubmited(true);
-        //TODO send film t oserwer
+        //TODO send film to serwer
     }
     
     return(
-        <div className="MainDiv">
+        <div className="AddVideo">
             {(ifSubmited) ? (
-               <div className="Welcome">
+               <div className="Info">
                    <p>Dodano film {details.name}</p>
                 </div>
             ) : (
@@ -44,7 +45,7 @@ function AddVideo() {
                         <label htmlFor="rok_produkcji">rok_produkcji:</label>
                         <input type="text" name="rok_produkcji" id="rok_produkcji" onChange={e=>setDetails({...details, rok_produkcji: e.target.value})} value={details.rok_produkcji}/>
                     </div>
-                        <input type="submit" value="LOGIN"/>
+                        <input type="submit" value="ADD"/>
                     </div>
                 </form>
             )}

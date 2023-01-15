@@ -1,0 +1,52 @@
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #222;
+}
+
+.Header .Login {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+    width: 50%;
+}
+  
+.Header .IconAndSearchBar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px;
+    width: 50%;
+}
+  
+.Header .LogoImage {
+    height: 50px;
+    padding-bottom: 4px;
+    padding-right: 10px;
+    padding-top: 9px;
+}
+  
+.Header .SearchBar {
+    height: 32px;
+    padding: 8px;
+    width: 33%;
+    min-width: 200px;
+}
+  
+.Header .LoginLink {
+    font-size: 40px;
+    color: white;
+}
+  
+.Header .LoginDiv {
+    padding: 5px;
+    margin-bottom: 5px;
+    font-size: 40px;
+    color: white;
+}
+  
+.Header .LoginDiv button {
+    color: white;
+    font-size: 40px;
+}
