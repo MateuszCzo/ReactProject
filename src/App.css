@@ -1,73 +1,10 @@
-.Container {
+.App {
   background-color: #999999;
-  height: 100%;
+  width: 100%;
   min-height: 100vh;
-}
-
-.Header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #222;
-}
-
-.Header input {
-  appearance: none;
-  background: none;
-  border: none;
-  outline: none;
-  color: white;
-  font-size: 30px;
-}
-
-.Login {
-  display: flex;
-  justify-content: flex-end;
-  padding: 5px;
-  width: 50%;
-}
-
-.IconAndSearchBar {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 5px;
-  width: 50%;
-}
-
-.LogoImage {
-  height: 50px;
-  padding-bottom: 4px;
-  padding-right: 10px;
-  padding-top: 9px;
-}
-
-.SearchBar {
-  height: 32px;
-  padding: 8px;
-  width: 33%;
-  min-width: 200px;
-}
-
-.LoginLink {
-  font-size: 40px;
-  color: white;
-}
-
-.LoginDiv {
-  padding: 5px;
-  margin-bottom: 5px;
-  font-size: 40px;
-  color: white;
-}
-
-.LoginDiv button {
-  color: white;
-  font-size: 40px;
 }
 
 .nav-link {
   text-decoration: none;
   color: black;
 }
-

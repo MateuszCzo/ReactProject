@@ -1,50 +1,81 @@
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
-import image from './images/film.jpg';
-import like from './images/like.jpg';
+import { BehaviorSubject, debounceTime } from 'rxjs';
+
 import './css/Home.css';
 
-function Home () {
+const inputChange = new BehaviorSubject();
+const inputChange$ = inputChange.asObservable();
+
+
+function Home ({search=""}) {
+
+    const [data, setData] = useState([]);
+    const [movies, setMovies] = useState([]);
+    const [finishLoading, setFinishLoading] = useState(false);
+
+    const setNewMovies = (value="") => {
+        let serchedMovies = [];
+        data.forEach((movie) => {
+            if(movie.title) {
+                if(movie.title.toLowerCase().includes(value.toLowerCase())) serchedMovies.push(movie);
+            }
+        })
+        setMovies(serchedMovies);
+    };
+
+    useEffect(() => {
+        axios.get("https://at.usermd.net/api/movies")
+        .then((response) => {
+            setData(response.data);
+            setMovies(response.data);
+            setFinishLoading(true);
+        })
+        .catch((error) =>{
+            console.log(error);
+        })
+    }, []);
+
+    useEffect(() => {
+        if(finishLoading) {
+            const subscription = inputChange$
+            .pipe(debounceTime(500))
+            .subscribe((value) => {
+                setNewMovies(value);
+            });
+        
+            return () => {
+                return subscription.unsubscribe();
+            };
+        }
+    }, [finishLoading]);
+
+    useEffect(() => {
+        if(finishLoading) inputChange.next(search);
+    }, [search]);
+
     return (
         <div className="Home">
-            <Link to="/details" className="nav-link" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
-                <div className='Film'>
-                    <div>
-                        <img className='FilmImage' src={image} alt="film"/>
+            {finishLoading ? 
+                movies.map((movie, i) => { return (
+                    <div key={i} className="MovieContainer">
+                        <Link to={`/details/${movie.id}`} className="nav-link" >
+                            <div className='MovieAligner'>
+                                <div>
+                                    <img className='MovieImage' src={movie.image}/>
+                                </div>
+                                <div className='MovieDetails'>
+                                    <p className='MovieTitle'>{movie.title}</p>
+                                    <p className="MovieContent">{movie.content}</p>
+                                </div>
+                            </div>
+                        </Link>
                     </div>
-                    <div className='FilmInfo'>
-                        <div><p className='FilmName'>Rambo: Pierwsza Krew</p></div>
-                        <div><p>Rambo: Pierwsza Krew 1982</p></div>
-                        <div className='Score'><img className='ScoreImage' src={like} alt="like"/> <p className='ScoreNumber'>7,3</p> <p>liczba ocen: 142 343</p></div>
-                        <div><p>Gatunek: Dramat, Akcja   Rażyseria: Ted Kotcheff</p></div>
-                    </div>
-                </div>
-            </Link>
-            <Link to="/details" className="nav-link" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
-                <div className='Film'>
-                    <div>
-                        <img className='FilmImage' src={image} alt="film"/>
-                    </div>
-                    <div className='FilmInfo'>
-                        <div><p className='FilmName'>Rambo: Pierwsza Krew</p></div>
-                        <div><p>Rambo: Pierwsza Krew 1982</p></div>
-                        <div className='Score'><img className='ScoreImage' src={like} alt="like"/> <p className='ScoreNumber'>7,3</p> <p>liczba ocen: 142 343</p></div>
-                        <div><p>Gatunek: Dramat, Akcja   Rażyseria: Ted Kotcheff</p></div>
-                    </div>
-                </div>
-            </Link>
-            <Link to="/details" className="nav-link" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
-                <div className='Film'>
-                    <div>
-                        <img className='FilmImage' src={image} alt="film"/>
-                    </div>
-                    <div className='FilmInfo'>
-                        <div><p className='FilmName'>Rambo: Pierwsza Krew</p></div>
-                        <div><p>Rambo: Pierwsza Krew 1982</p></div>
-                        <div className='Score'><img className='ScoreImage' src={like} alt="like"/> <p className='ScoreNumber'>7,3</p> <p>liczba ocen: 142 343</p></div>
-                        <div><p>Gatunek: Dramat, Akcja   Rażyseria: Ted Kotcheff</p></div>
-                    </div>
-                </div>
-            </Link>
+                )})
+            :
+            <p>Loading...</p>
+            }
         </div>
     );
 }

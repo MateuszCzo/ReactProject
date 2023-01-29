@@ -1,44 +1,43 @@
-.Details .Film {
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    background-color: white;
+.Details .MovieContainer {
     margin: 10px;
     min-width: 650px;
     width: 50%;
+    background-color: white;
+    padding: 15px;
 }
 
-.Details .FilmImage {
+.Details .MovieAligner {
+    display: flex;
+    align-items: center;
+}
+
+.Details .MovieImage {
     height: 256px;
 }
 
-.Details .FilmInfo {
+.Details .MovieDetails {
     display: flex;
     flex-direction: column;
     margin-left: 50px;
 }
 
-.Details .Score {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.Details .ScoreImage {
-    height: 32px;
-    margin: 1px;
-    margin-bottom: 10px;
-}
-
-.Details .ScoreNumber {
-    font-size: 30px;
-    font-weight: 500;
-    margin: 1px;
-    margin-bottom: 10px;
-}
-
-.Details .FilmName {
+.Details .MovieTitle {
     font-size: 40px;
     margin: 1px;
     font-weight: 500;
+}
+
+.Details .MovieContent {
+    font-size: 30px;
+    margin: 1px;
+    font-weight: 300;
+}
+
+.Details .DeleteButton {
+    font-size: 30px;
+    padding-top: 10px;
+}
+
+.Details .DeleteButton:hover {
+    cursor: pointer;
 }

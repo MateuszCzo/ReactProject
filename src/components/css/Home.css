@@ -1,44 +1,35 @@
-.Home .Film {
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    background-color: white;
+.Home .MovieContainer {
     margin: 10px;
     min-width: 650px;
     width: 50%;
+    background-color: white;
+    padding: 15px;
 }
 
-.Home .FilmImage {
+.Home .MovieAligner {
+    display: flex;
+    align-items: center;
+}
+
+.Home .MovieImage {
     height: 256px;
 }
 
-.Home .FilmInfo {
+.Home .MovieDetails {
     display: flex;
     flex-direction: column;
     margin-left: 50px;
+    color: black;
 }
 
-.Home .Score {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.Home .ScoreImage {
-    height: 32px;
-    margin: 1px;
-    margin-bottom: 10px;
-}
-
-.Home .ScoreNumber {
-    font-size: 30px;
-    font-weight: 500;
-    margin: 1px;
-    margin-bottom: 10px;
-}
-
-.Home .FilmName {
+.Home .MovieTitle {
     font-size: 40px;
     margin: 1px;
     font-weight: 500;
+}
+
+.Home .MovieContent {
+    font-size: 30px;
+    margin: 1px;
+    font-weight: 300;
 }

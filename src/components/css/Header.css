@@ -2,29 +2,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #222;
+    background-color: #232334;
+    height: 10vh;
 }
 
-.Header .Login {
-    display: flex;
-    justify-content: flex-end;
-    padding: 5px;
-    width: 50%;
-}
-  
-.Header .IconAndSearchBar {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 5px;
-    width: 50%;
+.Header input {
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 30px;
 }
   
 .Header .LogoImage {
     height: 50px;
-    padding-bottom: 4px;
-    padding-right: 10px;
-    padding-top: 9px;
+    padding: 5px;
 }
   
 .Header .SearchBar {
@@ -32,21 +24,35 @@
     padding: 8px;
     width: 33%;
     min-width: 200px;
+    margin-right: auto;
+    color: white;
 }
   
 .Header .LoginLink {
     font-size: 40px;
+    padding-right: 10px;
     color: white;
 }
-  
-.Header .LoginDiv {
-    padding: 5px;
-    margin-bottom: 5px;
+
+.Header .LogoutLink {
     font-size: 40px;
+    padding-right: 10px;
     color: white;
 }
-  
-.Header .LoginDiv button {
-    color: white;
+
+.Header .LogoutLink:hover {
+    cursor: pointer;
+}
+
+.Header .AddVideo {
     font-size: 40px;
+    color: white;
+    padding-right: 10px;
+    max-height: 10vh;
+}
+
+.Header .UserName {
+    font-size: 40px;
+    color: white;
+    padding-right: 10px;
 }
