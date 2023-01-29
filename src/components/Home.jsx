@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { BehaviorSubject, debounceTime } from 'rxjs';
+import { BehaviorSubject, debounceTime } from "rxjs";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode } from "swiper";
 
 import './css/Home.css';
+import 'swiper/css';
+import 'swiper/css/free-mode';
 
 const inputChange = new BehaviorSubject();
 const inputChange$ = inputChange.asObservable();
@@ -58,21 +62,27 @@ function Home ({search=""}) {
     return (
         <div className="Home">
             {finishLoading ? 
-                movies.map((movie, i) => { return (
-                    <div key={i} className="MovieContainer">
-                        <Link to={`/details/${movie.id}`} className="nav-link" >
-                            <div className='MovieAligner'>
-                                <div>
-                                    <img className='MovieImage' src={movie.image}/>
-                                </div>
-                                <div className='MovieDetails'>
-                                    <p className='MovieTitle'>{movie.title}</p>
-                                    <p className="MovieContent">{movie.content}</p>
-                                </div>
+                <Swiper
+                    freeMode={true}
+                    grabCursor={true}
+                    modules={[FreeMode]}
+                    className="Swiper"
+                    slidesPerView={5}
+                    spaceBetween={10}
+                >
+                    {movies.map((movie, i) => { return (
+                        <SwiperSlide key={i}>
+                            <div className="MovieContainer">
+                                <Link to={`/details/${movie.id}`} className="nav-link" >
+                                    <div className='MovieAligner'>
+                                        <img className='MovieImage' src={movie.image}/>
+                                        <p className='MovieTitle'>{movie.title}</p>
+                                    </div>
+                                </Link>
                             </div>
-                        </Link>
-                    </div>
-                )})
+                        </SwiperSlide>
+                    )})}
+                </Swiper>
             :
             <p>Loading...</p>
             }

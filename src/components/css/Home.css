@@ -1,35 +1,26 @@
 .Home .MovieContainer {
     margin: 10px;
-    min-width: 650px;
-    width: 50%;
-    background-color: white;
+    background-color: rgb(58, 58, 58);
+    width: 250px;
     padding: 15px;
 }
 
 .Home .MovieAligner {
     display: flex;
     align-items: center;
+    flex-direction: column;
 }
 
 .Home .MovieImage {
     height: 256px;
 }
 
-.Home .MovieDetails {
-    display: flex;
-    flex-direction: column;
-    margin-left: 50px;
-    color: black;
-}
-
 .Home .MovieTitle {
-    font-size: 40px;
+    font-size: 20px;
     margin: 1px;
     font-weight: 500;
+    color: white;
 }
-
-.Home .MovieContent {
-    font-size: 30px;
-    margin: 1px;
-    font-weight: 300;
+.Home .Swiper {
+    padding-top: 250px;
 }

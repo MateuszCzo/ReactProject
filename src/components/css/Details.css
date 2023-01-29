@@ -1,8 +1,9 @@
 .Details .MovieContainer {
-    margin: 10px;
+    margin: auto;
+    margin-top: 100px;
     min-width: 650px;
     width: 50%;
-    background-color: white;
+    background-color: rgb(58, 58, 58);
     padding: 15px;
 }
 
@@ -25,17 +26,20 @@
     font-size: 40px;
     margin: 1px;
     font-weight: 500;
+    color: white;
 }
 
 .Details .MovieContent {
     font-size: 30px;
     margin: 1px;
     font-weight: 300;
+    color: white;
 }
 
 .Details .DeleteButton {
     font-size: 30px;
     padding-top: 10px;
+    color: white;
 }
 
 .Details .DeleteButton:hover {

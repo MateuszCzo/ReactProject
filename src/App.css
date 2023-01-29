@@ -1,7 +1,8 @@
 .App {
-  background-color: #999999;
+  background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/e451379a-dd0a-4657-b530-4ca4c0cb2aee/704f0092-5336-4968-928e-af98c4ccec99/PL-pl-20230123-popsignuptwoweeks-perspective_alpha_website_small.jpg");
   width: 100%;
   min-height: 100vh;
+  position: absolute;
 }
 
 .nav-link {
