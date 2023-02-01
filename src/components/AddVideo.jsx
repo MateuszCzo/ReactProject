@@ -12,7 +12,7 @@ function AddVideo() {
     
     const submitHandler = e => {
         e.preventDefault();
-        if(details.title !== "" && details.image !== "" && details.content !== "") { setError("Błąd"); return }
+        if(details.title === "" || details.image === "" || details.content === "") { setError("Błąd"); return }
         axios.post("https://at.usermd.net/api/movies", {
             title: details.title,
             image: details.image,

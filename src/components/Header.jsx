@@ -5,7 +5,6 @@ import { isExpired, decodeToken  } from "react-jwt";
 
 import './css/Header.css';
 import logo from './images/logo.jpg';
-import { useEffect } from "react";
 
 function Header({setSearch}) {
 

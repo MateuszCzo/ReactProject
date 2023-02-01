@@ -12,6 +12,7 @@ function LoginForm() {
 
     const submitHandler = e => {
         e.preventDefault();
+        if(details.login === "" || details.password === "") { setError("Błąd"); return }
         axios.post('https://at.usermd.net/api/user/auth', {
             login: details.login,
             password: details.password

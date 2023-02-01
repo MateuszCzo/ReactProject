@@ -12,6 +12,7 @@ function RegisterFrom() {
 
     const submitHandler = e => {
         e.preventDefault();
+        if(details.login === "" || details.email === "" || details.password === "") { setError("Błąd"); return }
         axios.post('https://at.usermd.net/api/user/create', {
             name: details.login,
             email: details.email,
